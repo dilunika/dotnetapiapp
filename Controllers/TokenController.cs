@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using dotnetapiapp.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
-using Serilog.Context;
 
 namespace dotnetapiapp.Controllers
 {
