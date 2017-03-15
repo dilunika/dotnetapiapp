@@ -15,6 +15,8 @@ namespace dotnetapiapp
         {
             var config = new ConfigurationBuilder()
                 .AddCommandLine(args)
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("hosting.json", optional: false)
                 .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
             
