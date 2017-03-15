@@ -14,7 +14,6 @@ namespace dotnetapiapp.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAccount([FromRoute(Name = "accountId")] string accountId)
         {
-            LogContext.PushProperty("Resource", "Account[" + accountId + "]");
             if(accountId == null || accountId.Length == 0) {
                 Log.Warning("Returning 404 [NotFound]. No account id sent.");
                 return new StatusCodeResult((int) HttpStatusCode.NotFound);

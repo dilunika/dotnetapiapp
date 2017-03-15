@@ -25,7 +25,6 @@ namespace dotnetapiapp.Controllers
             }
 
             Token token = await GenerateToken(credentials);
-            LogContext.PushProperty("Resource", "Customer[" + token.CustomerId + "]");
             Log.Information("Successfully Received Token for Customer: {0} ", token.CustomerId);
 
             return Ok(token);
