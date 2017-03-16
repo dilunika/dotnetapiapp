@@ -19,8 +19,8 @@ namespace dotnetapiapp.Controllers
             }
 
             if(credentials.Username.Equals("invaliduser")) {
-                Log.Warning("Returning 401 [Unauthorized]. Invalid user credentials.");
-                return new StatusCodeResult((int) HttpStatusCode.Unauthorized);
+                Log.Warning("Returning 500 [Server Error]. Something has gone wrong with backend system. Bring some water they are burning !!!");
+                return new StatusCodeResult((int) HttpStatusCode.InternalServerError);
             }
 
             Token token = await GenerateToken(credentials);
