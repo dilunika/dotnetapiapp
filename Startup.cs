@@ -1,3 +1,4 @@
+using dotnetapiapp.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -37,6 +38,7 @@ namespace dotnetapiapp
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddSerilog();
+            app.UseMiddleware<HeaderInjector>();
 
             app.UseMvc();
         }
